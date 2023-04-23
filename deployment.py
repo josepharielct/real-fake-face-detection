@@ -46,7 +46,7 @@ class AlexNet(torch.nn.Module):
         return x
     
 # Load the trained model
-model = torch.load("model.pkl",map_location=torch.device('cpu'))
+model = torch.load("model.pkl",map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 
 # Define the labels
 labels = ['AI-generated', 'Real']
