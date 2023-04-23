@@ -87,8 +87,9 @@ def main():
         image = Image.open(uploaded_file)
         image = image.save("img.jpg")
         image = cv2.imread('img.jpg')
-        image = cv2.resize(image, (227, 227), interpolation=cv2.INTER_AREA)
         image_up = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+        image = cv2.resize(image, (227, 227), interpolation=cv2.INTER_AREA)
+     
         # Predict
         pred_label, prob = eval(model,image)
         pred_prob = prob[pred_label] * 100
