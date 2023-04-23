@@ -3,3 +3,4 @@ opencv-python-headless
 Pillow
 streamlit
 torch
+streamlit_image_select
